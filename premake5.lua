@@ -136,6 +136,7 @@ project "UnitTest"
 	includedirs
 	{
 		"HomeAutomation/src",
+		"%{prj.name}/src"
 	}
 
 	links
