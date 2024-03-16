@@ -41,6 +41,9 @@ ipch/
 *.vspx
 *.sap
 
+# Visual Studio Solution and Project Files
+*.sln
+
 # Directories
 .vs/
 bin/
@@ -52,4 +55,5 @@ bin-int/
 # HomeAutomation-specific
 bin
 bin-int
+Miscellaneous
 !premake5.exe

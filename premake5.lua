@@ -166,11 +166,9 @@ project "UnitTest"
 		runtime "Release"
 		optimize "on"
 
-project "SolutionItems"
-	location "SolutionItems"
+project "Miscellaneous"
+	location "Miscellaneous"
 	kind "None"
-	language "None"
-	staticruntime "on"
 
 	files
 	{
@@ -179,24 +177,6 @@ project "SolutionItems"
 		"*.lua",
 		"*.bat",
 		".gitignore",
-		".gitattributes"
+		".gitattributes",
 		".gitmodules"
 	}
-
-	filter "system:windows"
-		systemversion "latest"
-
-	filter "configurations:Debug"
-		defines "HA_DEBUG"
-		runtime "Debug"
-		symbols "on"
-
-	filter "configurations:Release"
-		defines "HA_RELEASE"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "HA_DIST"
-		runtime "Release"
-		optimize "on"
