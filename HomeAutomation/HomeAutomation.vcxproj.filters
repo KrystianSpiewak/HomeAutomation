@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="HomeAutomation">
+      <UniqueIdentifier>{2FDE1F4D-1BAC-1353-0440-8479F0ACEFB7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\HomeAutomation.h" />
+    <ClInclude Include="src\HomeAutomation\Application.h">
+      <Filter>HomeAutomation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HomeAutomation\EntryPoint.h">
+      <Filter>HomeAutomation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ha_pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\HomeAutomation\Application.cpp">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ha_pch.cpp" />
+  </ItemGroup>
+</Project>
