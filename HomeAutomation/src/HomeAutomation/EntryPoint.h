@@ -4,7 +4,7 @@
 #ifdef HA_PLATFORM_WINDOWS
 
 /**
- * Funtion CreateApplication(): to be defined by the CLIENT application
+ Entry Point for HomeAutomation client applications
  */
 extern HomeAutomation::Application* HomeAutomation::CreateApplication();
 
