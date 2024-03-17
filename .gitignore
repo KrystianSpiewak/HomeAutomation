@@ -49,8 +49,10 @@ ipch/
 bin/
 bin-int/
 
-# Files
-*.user
+# Visual Studio Solution Files
+# *.sln
+# **/*.vcxproj*
+# *.user
 
 # HomeAutomation-specific
 bin
