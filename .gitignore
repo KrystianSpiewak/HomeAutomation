@@ -50,9 +50,9 @@ bin/
 bin-int/
 
 # Visual Studio Solution Files
-# *.sln
-# **/*.vcxproj*
-# *.user
+*.sln
+**/*.vcxproj*
+*.user
 
 # HomeAutomation-specific
 bin
