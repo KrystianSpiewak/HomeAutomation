@@ -1,3 +1,9 @@
+/**
+ Student name: Krystian Spiewak
+ File description: This file contains the implementation of the Home Automation Application class.
+ Dependencies: ha_pch.h, Application.h
+ */
+
 #include "ha_pch.h"
 #include "Application.h"
 
@@ -10,6 +16,7 @@ namespace HomeAutomation {
 
 	Application::~Application()
 	{
+		this->Close();
 	}
 
 	void Application::Run()
@@ -20,7 +27,7 @@ namespace HomeAutomation {
 
 	void Application::Close()
 	{
-		m_isRunning = false;
+		if (m_isRunning) m_isRunning = false;
 		std::cout << "Goodbye HomeAutomation!" << std::endl;
 	}
 
@@ -29,4 +36,4 @@ namespace HomeAutomation {
 		return m_isRunning;
 	}
 
-} // namespace HomeAutomation
+}; // namespace HomeAutomation

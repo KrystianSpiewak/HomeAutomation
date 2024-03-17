@@ -1,3 +1,9 @@
+/**
+ Student Name: Krystian Spiewak
+ File description: This file contains the definition of the Home Automation Application class.
+ Dependencies: None
+ */
+
 #pragma once
 
 /**
@@ -49,4 +55,4 @@ namespace HomeAutomation {
 	Function CreateApplication(): to be defined by the CLIENT application
 	 */
 	Application* CreateApplication();
-}
+}; // namespace HomeAutomation
