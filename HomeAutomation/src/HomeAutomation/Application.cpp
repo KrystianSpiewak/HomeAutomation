@@ -27,19 +27,76 @@ namespace HomeAutomation {
 	{
 		m_isRunning = true;
 
-		m_menuDisplay->DisplayMainMenu();
-		m_userIOHandler->DisplayMessage("Welcome to the Home Automation Console!");
+		while (m_isRunning)
+		{
+			m_menuDisplay->DisplayMainMenu();
+			int choice = m_userIOHandler->GetUserInput();
+
+			switch (choice)
+			{
+			case 1:
+				HandleDeviceManagement();
+				break;
+			case 2:
+				HandleAutomationConfiguration();
+				break;
+			case 3:
+				HandleSecuritySystemControl();
+				break;
+			case 4:
+				Close();
+				break;
+			default:
+				m_userIOHandler->DisplayMessage("Invalid choice. Please try again.");
+				break;
+			}
+		}
 	}
 
 	void Application::Close()
 	{
 		if (m_isRunning) m_isRunning = false;
-		std::cout << "Goodbye!" << std::endl;
 	}
 
-	bool Application::IsRunning()
+	bool Application::IsRunning() const
 	{
 		return m_isRunning;
 	}
+
+    /**
+     * Handle device management operations.
+     */
+    void Application::HandleDeviceManagement()
+    {
+        m_menuDisplay->DisplayDeviceManagementMenu();
+        int choice = m_userIOHandler->GetUserInput();
+
+        // Implement device management logic based on choice
+        // For simplicity, we'll just return to main menu
+    }
+
+    /**
+     * Handle automation configuration operations.
+     */
+    void Application::HandleAutomationConfiguration()
+    {
+        m_menuDisplay->DisplayAutomationConfigurationMenu();
+        int choice = m_userIOHandler->GetUserInput();
+
+        // Implement automation configuration logic based on choice
+        // For simplicity, we'll just return to main menu
+    }
+
+    /**
+     * Handle security system control operations.
+     */
+    void Application::HandleSecuritySystemControl()
+    {
+        m_menuDisplay->DisplaySecuritySystemControlMenu();
+        int choice = m_userIOHandler->GetUserInput();
+
+        // Implement security system control logic based on choice
+        // For simplicity, we'll just return to main menu
+    }
 
 }; // namespace HomeAutomation

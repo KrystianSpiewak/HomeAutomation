@@ -46,7 +46,7 @@ namespace HomeAutomation {
 		/**
 		Check if the application is running
 		 */
-		bool IsRunning();
+		bool IsRunning() const;
 
 		private:
 			/**
@@ -64,6 +64,20 @@ namespace HomeAutomation {
 			 */
 			std::unique_ptr<UserIOHandler> m_userIOHandler;
 
+			/**
+			Handle device management operations.
+			*/
+			void HandleDeviceManagement();
+
+			/**
+			Handle automation configuration operations.
+			 */
+			void HandleAutomationConfiguration();
+
+			/**
+			Handle security system control operations.
+			 */
+			void HandleSecuritySystemControl();
 	};
 
 	/**

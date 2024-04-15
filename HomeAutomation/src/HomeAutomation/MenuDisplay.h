@@ -8,29 +8,28 @@
 namespace HomeAutomation {
 
     /**
-     * MenuDisplay class handles displaying various menus for the Home Automation application.
+     MenuDisplay class handles displaying various menus for the Home Automation application.
      */
     class MenuDisplay
     {
     public:
         /**
-         * Display the main menu for the application.
+         Display the main menu for the application.
          */
         void DisplayMainMenu();
 
-    private:
         /**
-         * Display the device management menu.
+         Display the device management menu.
          */
         void DisplayDeviceManagementMenu();
 
         /**
-         * Display the automation configuration menu.
+         Display the automation configuration menu.
          */
         void DisplayAutomationConfigurationMenu();
 
         /**
-         * Display the security system control menu.
+         Display the security system control menu.
          */
         void DisplaySecuritySystemControlMenu();
     };

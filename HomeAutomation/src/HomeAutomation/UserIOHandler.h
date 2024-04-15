@@ -10,22 +10,20 @@
 namespace HomeAutomation {
 
     /**
-     * UserIOHandler class manages user input and output operations for the Home Automation application.
+     UserIOHandler class manages user input and output operations for the Home Automation application.
      */
     class UserIOHandler
     {
     public:
         /**
-         * Get user input from the console.
-         *
-         * @return The user's choice as an integer.
+         Get user input from the console.
+         @return The user's choice as an integer.
          */
         int GetUserInput();
 
         /**
-         * Display a message to the console.
-         *
-         * @param message The message to display.
+		 Display a message to the console.
+		 @param message The message to display.
          */
         void DisplayMessage(const std::string& message);
     };
