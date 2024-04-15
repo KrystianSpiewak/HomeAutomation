@@ -11,7 +11,8 @@ namespace HomeAutomation {
 
 	Application::Application()
 	{
-		m_isRunning = false;
+		// Create an instance of the Test class
+		m_menuDisplay = std::make_unique<MenuDisplay>();
 	}
 
 	Application::~Application()
@@ -22,13 +23,14 @@ namespace HomeAutomation {
 	void Application::Run()
 	{
 		m_isRunning = true;
-		std::cout << "Hello HomeAutomation!" << std::endl;
+
+		m_menuDisplay->DisplayMainMenu();
 	}
 
 	void Application::Close()
 	{
 		if (m_isRunning) m_isRunning = false;
-		std::cout << "Goodbye HomeAutomation!" << std::endl;
+		std::cout << "Goodbye!" << std::endl;
 	}
 
 	bool Application::IsRunning()

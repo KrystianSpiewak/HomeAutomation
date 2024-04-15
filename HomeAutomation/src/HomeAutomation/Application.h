@@ -6,6 +6,9 @@
 
 #pragma once
 
+#include "MenuDisplay.h"
+#include <memory>
+
 /**
  Namespace for HomeAutomation identifiers
  */
@@ -48,7 +51,12 @@ namespace HomeAutomation {
 			/**
 			 Flag to indicate if the application is running
 			*/
-			bool m_isRunning;
+			bool m_isRunning{ false };
+
+			/**
+			 Instance of the Test class
+			 */
+			std::unique_ptr<MenuDisplay> m_menuDisplay;
 	};
 
 	/**
