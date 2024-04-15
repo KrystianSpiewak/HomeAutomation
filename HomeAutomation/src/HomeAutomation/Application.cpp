@@ -129,7 +129,7 @@ namespace HomeAutomation {
         int choice = m_userIOHandler->GetUserInput(std::make_pair(1, 3));
 
         // Implement automation configuration logic based on choice
-        // For simplicity, we'll just return to main menu
+        // For now return to main menu
     }
 
     /**
@@ -141,7 +141,7 @@ namespace HomeAutomation {
         int choice = m_userIOHandler->GetUserInput(std::make_pair(1, 3));
 
         // Implement security system control logic based on choice
-        // For simplicity, we'll just return to main menu
+        // For now return to main menu
     }
 
 }; // namespace HomeAutomation
