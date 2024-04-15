@@ -7,6 +7,7 @@
 #pragma once
 
 #include "MenuDisplay.h"
+#include "UserIOHandler.h"
 #include <memory>
 
 /**
@@ -54,9 +55,15 @@ namespace HomeAutomation {
 			bool m_isRunning{ false };
 
 			/**
-			 Instance of the Test class
+			Pointer to the MenuDisplay object
 			 */
 			std::unique_ptr<MenuDisplay> m_menuDisplay;
+
+			/**
+			Pointer to the UserIOHandler object
+			 */
+			std::unique_ptr<UserIOHandler> m_userIOHandler;
+
 	};
 
 	/**

@@ -1,7 +1,7 @@
 /**
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the MenuDisplay class responsible for displaying menus in the Home Automation application.
- * Dependencies: <iostream>, <string>
+ * Dependencies: None
  */
 #pragma once
 

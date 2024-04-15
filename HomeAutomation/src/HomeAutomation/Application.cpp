@@ -13,6 +13,9 @@ namespace HomeAutomation {
 	{
 		// Create an instance of the Test class
 		m_menuDisplay = std::make_unique<MenuDisplay>();
+
+		// Create an instance of the UserIOHandler class
+		m_userIOHandler = std::make_unique<UserIOHandler>();
 	}
 
 	Application::~Application()
@@ -25,6 +28,7 @@ namespace HomeAutomation {
 		m_isRunning = true;
 
 		m_menuDisplay->DisplayMainMenu();
+		m_userIOHandler->DisplayMessage("Welcome to the Home Automation Console!");
 	}
 
 	void Application::Close()

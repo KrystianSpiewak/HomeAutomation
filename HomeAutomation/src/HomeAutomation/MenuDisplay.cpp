@@ -1,7 +1,7 @@
 /**
  * Student Name: Krystian Spiewak
  * File description: This file contains the implementation of the MenuDisplay class responsible for displaying menus in the Home Automation application.
- * Dependencies: "MenuDisplay.h"
+ * Dependencies: "ha_pch.h", "MenuDisplay.h"
  */
 #include "ha_pch.h"
 #include "MenuDisplay.h"
