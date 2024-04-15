@@ -14,12 +14,29 @@ namespace HomeAutomation {
      *
      * @return The user's choice as an integer.
      */
-    int UserIOHandler::GetUserInput()
+    int UserIOHandler::GetUserInput(const std::pair<int, int>& range)
     {
-        int choice;
-        std::cout << "\nEnter your choice: ";
-        std::cin >> choice;
-        return choice;
+		int choice;
+		bool isValidInput = false;
+
+		do
+		{
+			std::cout << "Enter your choice (" << range.first << "-" << range.second << "): ";
+
+			if (!(std::cin >> choice) || choice < range.first || choice > range.second)
+			{
+				std::cout << "Invalid input. Please enter a valid number between " << range.first << " and " << range.second << "." << std::endl;
+				std::cin.clear(); // Clear the error flag
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard the input buffer
+			}
+			else
+			{
+				isValidInput = true;
+			}
+
+		} while (!isValidInput);
+
+		return choice;
     }
 
     /**

@@ -19,7 +19,7 @@ namespace HomeAutomation {
          Get user input from the console.
          @return The user's choice as an integer.
          */
-        int GetUserInput();
+        int GetUserInput(const std::pair<int, int>& range);
 
         /**
 		 Display a message to the console.

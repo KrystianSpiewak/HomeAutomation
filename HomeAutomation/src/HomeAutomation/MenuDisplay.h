@@ -6,7 +6,7 @@
 #pragma once
 
 namespace HomeAutomation {
-
+        
     /**
      MenuDisplay class handles displaying various menus for the Home Automation application.
      */
@@ -14,24 +14,50 @@ namespace HomeAutomation {
     {
     public:
         /**
-         Display the main menu for the application.
-         */
+            * Display the main menu for the application.
+            */
         void DisplayMainMenu();
 
         /**
-         Display the device management menu.
-         */
+            * Display the device management menu.
+            */
         void DisplayDeviceManagementMenu();
 
         /**
-         Display the automation configuration menu.
-         */
+            * Display smart thermostat options.
+            */
+        void DisplaySmartThermostatOptions();
+
+        /**
+            * Display television system options.
+            */
+        void DisplayTelevisionSystemOptions();
+
+        /**
+            * Display robot vacuum options.
+            */
+        void DisplayRobotVacuumOptions();
+
+        /**
+            * Display lights options.
+            */
+        void DisplayLightsOptions();
+
+        /**
+            * Display security system options.
+            */
+        void DisplaySecuritySystemOptions();
+
+        /**
+            * Display automation configuration menu.
+            */
         void DisplayAutomationConfigurationMenu();
 
         /**
-         Display the security system control menu.
-         */
+            * Display security system control menu.
+            */
         void DisplaySecuritySystemControlMenu();
+
     };
 
 } // namespace HomeAutomation
