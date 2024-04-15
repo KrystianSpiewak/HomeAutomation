@@ -27,6 +27,8 @@ namespace HomeAutomation {
 	{
 		m_isRunning = true;
 
+		std::cout << "Welcome to the Home Automation System!" << std::endl;
+
 		while (m_isRunning)
 		{
 			m_menuDisplay->DisplayMainMenu();
@@ -56,6 +58,8 @@ namespace HomeAutomation {
 	void Application::Close()
 	{
 		if (m_isRunning) m_isRunning = false;
+
+		std::cout << "Shutting down the Home Automation System..." << std::endl;
 	}
 
 	bool Application::IsRunning() const
