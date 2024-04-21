@@ -1,12 +1,11 @@
 /**
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the VacuumRobot class that inherits from the SmartAppliance class.
- * Dependencies: <string>, SmartAppliance.h
+ * Dependencies:SmartAppliance.h
  */
 
 #pragma once
 
-#include <string>
 #include "SmartAppliance.h"
 
 namespace HomeAutomation {
