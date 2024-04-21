@@ -1,7 +1,7 @@
 /**
  Student Name: Krystian Spiewak
- File description: This file is testing the VacuumRobot class.
- Dependencies: pch.h, CppUnitTest.h, TV.h
+ File description: This file is testing the Light class.
+ Dependencies: pch.h, CppUnitTest.h, Light.h
  */
 
 #include "pch.h"
