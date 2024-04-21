@@ -1,7 +1,7 @@
 /**
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the SmartAppliance abstract class that individual smart appliances will inherit from.
- * Dependencies: None
+ * Dependencies: <string>
  */
 
 #pragma once
@@ -19,35 +19,24 @@ namespace HomeAutomation {
 	public:
 
 		/**
-		 Virtual method to set the name of the appliance.
+		Method to set the name of the appliance.
 		 */
-		virtual void SetName(std::string name) = 0;
+		void SetName(std::string name);
 
 		/**
-		 Virtual method to set the brand of the appliance.
+		Method to set the brand of the appliance.
 		 */
-		virtual void SetBrand(std::string brand) = 0;
+		void SetBrand(std::string brand);
 
 		/**
-		 Virtual method to set the model of the appliance.
+		Method to set the model of the appliance.
 		 */
-		virtual void SetModel(std::string model) = 0;
+		void SetModel(std::string model);
 
 		/**
-		Virtual method to set the network address of the appliance.
+		Method to set the network address of the appliance.
 		 */
-		virtual void SetNetAddr(std::string netAddr) = 0;
-
-		/**
-		Virtual method to turn the appliance on or off.
-		*/
-		virtual void ToggleOnOff() = 0;
-
-		/**
-		Virtual method to get the boolean representing the power status of the appliance.
-		@return True if the appliance is on, false if it is off.
-		 */
-		virtual bool IsOn() = 0;
+		void SetNetAddr(std::string netAddr);
 
 		/**
 		Virtual method to print the appliance status.
@@ -55,35 +44,31 @@ namespace HomeAutomation {
 		virtual void PrintStatus() = 0;
 
 		/**
-		Virtual method to get the name of the appliance.
+		Method to get the name of the appliance.
 		@return The name of the appliance.
 		 */
-		virtual std::string GetName() = 0;
+		std::string GetName();
 
 		/**
-		Virtual method to get the brand of the appliance.
+		Method to get the brand of the appliance.
 		@return The brand of the appliance.
 		 */
-		virtual std::string GetBrand() = 0;
+		std::string GetBrand();
 
 		/**
-		Virtual method to get the model of the appliance.
+		Method to get the model of the appliance.
 		@return The model of the appliance.
 		 */
-		virtual std::string GetModel() = 0;
+		std::string GetModel();
 
 		/**
-		Virtual method to get the network address of the appliance.
+		Method to get the network address of the appliance.
 		@return The network address of the appliance.
 		 */
-		virtual std::string GetNetAddr() = 0;
+		std::string GetNetAddr();
 
 	private:
-		/**
-		Flag to indicate if the appliance is on or off.
-		 */
-		bool m_isOn{ false };
-
+		
 		/**
 		Name of the appliance.
 		 */
