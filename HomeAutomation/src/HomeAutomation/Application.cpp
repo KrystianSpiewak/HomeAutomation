@@ -20,7 +20,6 @@ namespace HomeAutomation {
 
 	Application::~Application()
 	{
-		this->Close();
 	}
 
 	void Application::Run()

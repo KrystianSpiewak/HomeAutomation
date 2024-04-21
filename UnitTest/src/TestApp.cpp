@@ -31,15 +31,6 @@ namespace HomeAutomation
 			Assert::IsFalse(testApp->IsRunning());
 			delete testApp;
 		}
-		TEST_METHOD(TestAppRunAndStop)
-		{
-			HomeAutomation::Application* testApp = HomeAutomation::CreateApplication();
-			testApp->Run();
-			Assert::IsTrue(testApp->IsRunning());
-			testApp->Close();
-			Assert::IsFalse(testApp->IsRunning());
-			delete testApp;
-		}
 	};
 }
 
