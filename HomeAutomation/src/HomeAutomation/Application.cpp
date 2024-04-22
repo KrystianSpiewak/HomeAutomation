@@ -1,11 +1,18 @@
 /**
  Student name: Krystian Spiewak
  File description: This file contains the implementation of the Home Automation Application class.
- Dependencies: ha_pch.h, Application.h
+ Dependencies: ha_pch.h, Application.h, Thermostat.h, Light.h, SecuritySystem.h, TV.h, VacuumRobot.h
+ Last modified: 04/21/2024
  */
 
 #include "ha_pch.h"
 #include "Application.h"
+
+#include "Thermostat.h"
+#include "Light.h"
+#include "SecuritySystem.h"
+#include "TV.h"
+#include "VacuumRobot.h"
 
 namespace HomeAutomation {
 
@@ -32,6 +39,13 @@ namespace HomeAutomation {
 		{
 			m_menuDisplay->DisplayMainMenu();
 			int choice = m_userIOHandler->GetUserInput(std::make_pair(1, 4));
+
+			// Add test smart appliances to the m_smartAppliances vector
+			m_smartAppliances.push_back(std::make_shared<Thermostat>());
+			m_smartAppliances.push_back(std::make_shared<Light>());
+			m_smartAppliances.push_back(std::make_shared<SecuritySystem>());
+			m_smartAppliances.push_back(std::make_shared<TV>());
+			m_smartAppliances.push_back(std::make_shared<VacuumRobot>());
 
 			switch (choice)
 			{

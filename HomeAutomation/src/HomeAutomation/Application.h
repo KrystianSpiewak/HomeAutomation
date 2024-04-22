@@ -1,7 +1,8 @@
 /**
  Student Name: Krystian Spiewak
  File description: This file contains the definition of the Home Automation Application class.
- Dependencies: None
+ Dependencies: MenuDisplay.h, "UserIOHandler.h, <memory>, SmartAppliance.h, <vector>
+ Last modified: 04/21/2024
  */
 
 #pragma once
@@ -9,6 +10,9 @@
 #include "MenuDisplay.h"
 #include "UserIOHandler.h"
 #include <memory>
+#include <vector>
+
+#include "SmartAppliance.h"
 
 /**
  Namespace for HomeAutomation identifiers
@@ -48,36 +52,41 @@ namespace HomeAutomation {
 		 */
 		bool IsRunning() const;
 
-		private:
-			/**
-			 Flag to indicate if the application is running
+	private:
+		/**
+		 Flag to indicate if the application is running
+		*/
+		bool m_isRunning{ false };
+
+		/**
+		Pointer to the MenuDisplay object
+		 */
+		std::unique_ptr<MenuDisplay> m_menuDisplay;
+
+		/**
+		Pointer to the UserIOHandler object
+		 */
+		std::unique_ptr<UserIOHandler> m_userIOHandler;
+
+		/**
+		Vector to hold the devices connected to the system
+		*/
+		std::vector<std::shared_ptr<SmartAppliance>> m_smartAppliances{};
+
+		/**
+		Handle device management operations.
+		*/
+		void HandleDeviceManagement();
+
+		/**
+		Handle automation configuration operations.
 			*/
-			bool m_isRunning{ false };
+		void HandleAutomationConfiguration();
 
-			/**
-			Pointer to the MenuDisplay object
-			 */
-			std::unique_ptr<MenuDisplay> m_menuDisplay;
-
-			/**
-			Pointer to the UserIOHandler object
-			 */
-			std::unique_ptr<UserIOHandler> m_userIOHandler;
-
-			/**
-			Handle device management operations.
+		/**
+		Handle security system control operations.
 			*/
-			void HandleDeviceManagement();
-
-			/**
-			Handle automation configuration operations.
-			 */
-			void HandleAutomationConfiguration();
-
-			/**
-			Handle security system control operations.
-			 */
-			void HandleSecuritySystemControl();
+		void HandleSecuritySystemControl();
 	};
 
 	/**
