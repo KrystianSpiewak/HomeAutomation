@@ -77,6 +77,12 @@ namespace HomeAutomation {
 		Handle device management operations.
 		*/
 		void HandleDeviceManagement();
+
+		/**
+		Method to add a new device to the m_smartAppliances field.
+		@param device: shared pointer to the device to be added.
+		*/
+		void AddDevice(std::shared_ptr<SmartAppliance> device);
 	};
 
 	/**

@@ -47,11 +47,11 @@ namespace HomeAutomation {
 			std::shared_ptr<TV> testTV = std::make_shared<TV>();
 			std::shared_ptr<VacuumRobot> testVacuumRobot = std::make_shared<VacuumRobot>();
 
-			m_smartAppliances.push_back(testThermostat);
-			m_smartAppliances.push_back(testLight);
-			m_smartAppliances.push_back(testSecuritySystem);
-			m_smartAppliances.push_back(testTV);
-			m_smartAppliances.push_back(testVacuumRobot);
+			AddDevice(testThermostat);
+			AddDevice(testLight);
+			AddDevice(testSecuritySystem);
+			AddDevice(testTV);
+			AddDevice(testVacuumRobot);
 
 			switch (choice)
 			{
@@ -249,6 +249,12 @@ namespace HomeAutomation {
 			}
 
 		} while (choice != 0);
+	}
+
+
+	void Application::AddDevice(std::shared_ptr<SmartAppliance> device)
+	{
+		m_smartAppliances.push_back(device);
 	}
 
 }; // namespace HomeAutomation
