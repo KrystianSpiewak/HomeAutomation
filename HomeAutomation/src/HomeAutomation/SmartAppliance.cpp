@@ -26,7 +26,12 @@ namespace HomeAutomation {
 
 	void SmartAppliance::SetNetAddr(std::string netAddr)
 	{
-		m_NetAddr = netAddr;
+		if (IsValidIPAddress(netAddr)) {
+			m_NetAddr = netAddr;
+		}
+		else { // Throw an exception if the IP address is invalid
+			throw std::invalid_argument("Invalid IP address format.");
+		}
 	}
 
 	std::string SmartAppliance::GetName()

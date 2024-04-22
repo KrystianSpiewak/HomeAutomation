@@ -77,16 +77,6 @@ namespace HomeAutomation {
 		Handle device management operations.
 		*/
 		void HandleDeviceManagement();
-
-		/**
-		Handle automation configuration operations.
-			*/
-		void HandleAutomationConfiguration();
-
-		/**
-		Handle security system control operations.
-			*/
-		void HandleSecuritySystemControl();
 	};
 
 	/**

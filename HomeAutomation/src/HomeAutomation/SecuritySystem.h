@@ -37,7 +37,7 @@ namespace HomeAutomation {
 		Method to check if the alarm is activated.
 		@return True if the alarm is activated, false otherwise.
 		*/
-		bool IsAlarmActivated();
+		bool IsAlarmActivated() const;
 
 		/**
 		Method to print the status of the security system.

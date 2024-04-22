@@ -10,13 +10,14 @@
 #include <fstream>
 
 
+
 namespace HA_Utilities {
 
 	/**
-	 * @brief Template function to display the state of a device.
-	 * @tparam T The type of the state to display.
-	 * @param deviceName The name of the device.
-	 * @param state The state of the device.
+	@brief Template function to display the state of a device.
+	@tparam T The type of the state to display.
+	@param deviceName The name of the device.
+	@param state The state of the device.
 	 */
 	template <typename T>
 	void DisplayDeviceState(const std::string& deviceName, const T& state) {
@@ -72,46 +73,5 @@ namespace HA_Utilities {
 		}
 
 		throw std::runtime_error("Device state not found in file");
-	}
-
-	/**
-	 * @brief Utility function to check if a string is a valid IP address.
-	 * @param ipAddress The IP address to check.
-	 * @return True if the IP address is valid, false otherwise.
-	 */
-	bool IsValidIPAddress(const std::string& ipAddress) {
-
-		// Check if the IP address is empty
-		if (ipAddress.empty()) {
-			return false;
-		}
-
-		// Check if the IP address has 4 parts separated by '.'
-		int count = 0;
-		for (char c : ipAddress) {
-			if (c == '.') {
-				count++;
-			}
-		}
-
-		if (count != 3) {
-			return false;
-		}
-
-		// Check if each part of the IP address is a number between 0 and 255
-		std::string part;
-		int num;
-		std::istringstream ss(ipAddress);
-		while (std::getline(ss, part, '.')) {
-			if (part.empty()) {
-				return false;
-			}
-			num = std::stoi(part);
-			if (num < 0 || num > 255) {
-				return false;
-			}
-		}
-
-		return true;
 	}
 } // namespace HA_Utilities

@@ -11,11 +11,21 @@ namespace HomeAutomation {
 
 	void SecuritySystem::ArmSystem()
 	{
+		if (m_isAlarmActive)
+		{
+			std::cout << "Cannot arm the system while the alarm is active." << std::endl;
+			return;
+		}
 		m_isArmed = true;
 	}
 
 	void SecuritySystem::DisarmSystem()
 	{
+		if (m_isAlarmActive)
+		{
+			std::cout << "Cannot disarm the system while the alarm is active." << std::endl;
+			return;
+		}
 		m_isArmed = false;
 	}
 
@@ -26,11 +36,25 @@ namespace HomeAutomation {
 
 	void SecuritySystem::TriggerAlarm()
 	{
+		if (!m_isArmed)
+		{
+			std::cout << "Cannot trigger the alarm while the system is disarmed." << std::endl;
+			return;
+		}
 		m_isAlarmActive = true;
 	}
 
-	bool SecuritySystem::IsAlarmActivated()
+	bool SecuritySystem::IsAlarmActivated() const
 	{
+		// Temporary output for testing purposes
+		if (m_isAlarmActive)
+		{
+			std::cout << "Alarm is active!" << std::endl;
+		}
+		else
+		{
+			std::cout << "Alarm is not active." << std::endl;
+		}
 		return m_isAlarmActive;
 	}
 

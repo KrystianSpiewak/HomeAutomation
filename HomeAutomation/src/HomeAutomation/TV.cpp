@@ -21,7 +21,7 @@ namespace HomeAutomation {
 
 	void TV::SetChannel(int currentChannel)
 	{
-		// Handle exceptions for invalid currentChannel values
+		// TODO: Handle exceptions for invalid currentChannel values
 		m_CurrentChannel = currentChannel;
 	}
 
@@ -37,25 +37,25 @@ namespace HomeAutomation {
 
 	void TV::ChangeChannelUp()
 	{
-		// Handle exceptions for channel out of range
+		// TODO: Handle exceptions for channel out of range
 		m_CurrentChannel++;
 	}
 
 	void TV::ChangeChannelDown()
 	{
-		// Handle exceptions for channel out of range
+		// TODO: Handle exceptions for channel out of range
 		m_CurrentChannel--;
 	}
 
 	void TV::IncreaseVolume()
 	{
-		// Handle exceptions for volume out of range
+		// TODO: Handle exceptions for volume out of range
 		m_Volume++;
 	}
 
 	void TV::DecreaseVolume()
 	{
-		// Handle exceptions for volume out of range
+		// TODO: Handle exceptions for volume out of range
 		m_Volume--;
 	}
 

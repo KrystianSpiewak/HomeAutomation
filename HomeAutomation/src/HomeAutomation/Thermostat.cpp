@@ -11,13 +11,13 @@ namespace HomeAutomation {
 
 	void Thermostat::SetTemperature(double temperature)
 	{
-		// Handle exceptions for invalid temperature values
+		// TODO: Handle exceptions for invalid temperature values
 		m_Temperature = temperature;
 	}
 
 	void Thermostat::SetCurrentTemp(double currentTemp)
 	{
-		// Handle exceptions for invalid currentTemp values
+		// TODO: Handle exceptions for invalid currentTemp values
 		m_CurrentTemp = currentTemp;
 	}
 

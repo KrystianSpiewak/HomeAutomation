@@ -48,8 +48,8 @@ namespace HomeAutomation {
 		std::cout << "2. Set Channel" << std::endl;
 		std::cout << "3. Change Channel Up" << std::endl;
 		std::cout << "4. Change Channel Down" << std::endl;
-		std::cout << "5. Increase Volume Up" << std::endl;
-		std::cout << "6. Increase Volume Down" << std::endl;
+		std::cout << "5. Increase Volume" << std::endl;
+		std::cout << "6. Decrease Volume" << std::endl;
 		std::cout << "7. Display Status" << std::endl;
 		std::cout << "8. Return to Device Management Menu" << std::endl;
 		std::cout << "Enter your choice: ";
@@ -80,27 +80,10 @@ namespace HomeAutomation {
 	void MenuDisplay::DisplaySecuritySystemOptions()
 	{
 		std::cout << "\n=== Security System Options ===" << std::endl;
-		std::cout << "1. Set Activation Time" << std::endl;
-		std::cout << "2. Set Sensitivity Level" << std::endl;
-		std::cout << "3. Return to Device Management Menu" << std::endl;
-		std::cout << "Enter your choice: ";
-	}
-
-	void MenuDisplay::DisplayAutomationConfigurationMenu()
-	{
-		std::cout << "\n=== Automation Configuration ===" << std::endl;
-		std::cout << "1. Set Automation Schedule" << std::endl;
-		std::cout << "2. Configure Automation Rules" << std::endl;
-		std::cout << "3. Return to Device Management Menu" << std::endl;
-		std::cout << "Enter your choice: ";
-	}
-
-	void MenuDisplay::DisplaySecuritySystemControlMenu()
-	{
-		std::cout << "\n=== Security System Control ===" << std::endl;
-		std::cout << "1. Arm Security System" << std::endl;
-		std::cout << "2. Disarm Security System" << std::endl;
-		std::cout << "3. Return to Device Management Menu" << std::endl;
+		std::cout << "1. Arm System" << std::endl;
+		std::cout << "2. Disarm System" << std::endl;
+		std::cout << "3. Display Status" << std::endl;
+		std::cout << "4. Return to Device Management Menu" << std::endl;
 		std::cout << "Enter your choice: ";
 	}
 

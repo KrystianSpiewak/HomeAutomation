@@ -2,6 +2,7 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the MenuDisplay class responsible for displaying menus in the Home Automation application.
  * Dependencies: None
+ Last modified: 04/21/2024
  */
 #pragma once
 
@@ -47,16 +48,6 @@ namespace HomeAutomation {
             * Display security system options.
             */
         void DisplaySecuritySystemOptions();
-
-        /**
-            * Display automation configuration menu.
-            */
-        void DisplayAutomationConfigurationMenu();
-
-        /**
-            * Display security system control menu.
-            */
-        void DisplaySecuritySystemControlMenu();
 
     };
 

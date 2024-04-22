@@ -7,13 +7,14 @@
 #pragma once
 
 #include <string>
+#include <sstream>
 
 
 namespace HomeAutomation {
 	
 	/**
-		 * SmartAppliance class is an abstract class that individual smart appliances will inherit from.
-		 	 */
+	SmartAppliance class is an abstract class that individual smart appliances will inherit from.
+	 */
 	class SmartAppliance
 	{
 	public:
@@ -88,6 +89,47 @@ namespace HomeAutomation {
 		Network address of the appliance.
 		*/
 		std::string m_NetAddr;
+
+		/**
+		 Utility function to check if a string is a valid IP address.
+		 @param ipAddress The IP address to check.
+		 @return True if the IP address is valid, false otherwise.
+		 */
+		bool IsValidIPAddress(const std::string& ipAddress) {
+
+			// Check if the IP address is empty
+			if (ipAddress.empty()) {
+				return false;
+			}
+
+			// Check if the IP address has 4 parts separated by '.'
+			int count = 0;
+			for (char c : ipAddress) {
+				if (c == '.') {
+					count++;
+				}
+			}
+
+			if (count != 3) {
+				return false;
+			}
+
+			// Check if each part of the IP address is a number between 0 and 255
+			std::string part;
+			int num;
+			std::istringstream ss(ipAddress);
+			while (std::getline(ss, part, '.')) {
+				if (part.empty()) {
+					return false;
+				}
+				num = std::stoi(part);
+				if (num < 0 || num > 255) {
+					return false;
+				}
+			}
+
+			return true;
+		}
 	};
 
 } // namespace HomeAutomation

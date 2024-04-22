@@ -15,15 +15,6 @@ namespace HomeAutomation
 	TEST_CLASS(HA_UtilitiesTest)
 	{
 	public:
-		TEST_METHOD(IsValidIPAddress)
-		{
-			std::string ipAddr = "";
-			Assert::IsFalse(HA_Utilities::IsValidIPAddress(ipAddr));
-			ipAddr = "55.55.5";
-			Assert::IsFalse(HA_Utilities::IsValidIPAddress(ipAddr));
-			ipAddr = "127.0.0.1";
-			Assert::IsTrue(HA_Utilities::IsValidIPAddress(ipAddr));
-		}
 		TEST_METHOD(DisplayDeviceState)
 		{
 			std::string deviceName = "Thermostat";
