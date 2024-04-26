@@ -2,6 +2,9 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the implementation of the Thermostat class that inherits from the SmartAppliance class.
  * Dependencies: "ha_pch.h", "Thermostat.h"
+ * 
+ * Last modified: 4/26/2024
+ * Added exception handling for invalid temperature values.
  */
 
 #include "ha_pch.h"
@@ -11,13 +14,23 @@ namespace HomeAutomation {
 
 	void Thermostat::SetTemperature(double temperature)
 	{
-		// TODO: Handle exceptions for invalid temperature values
+		// Handle exceptions for invalid temperature values
+		if (temperature < 60 || temperature > 90)
+		{
+			throw std::invalid_argument("Invalid temperature value. Temperature must be between 60 and 90 degrees Fahrenheit.");
+		}
+
 		m_Temperature = temperature;
 	}
 
 	void Thermostat::SetCurrentTemp(double currentTemp)
 	{
-		// TODO: Handle exceptions for invalid currentTemp values
+		// Handle exceptions for invalid currentTemp values
+		if (currentTemp < 32 || currentTemp > 120)
+		{
+			throw std::invalid_argument("Invalid current temperature value. Current temperature must be between 32 and 120 degrees Fahrenheit.");
+		}
+
 		m_CurrentTemp = currentTemp;
 	}
 

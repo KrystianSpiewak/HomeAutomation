@@ -2,6 +2,9 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the implementation of the TV class that inherits from the SmartAppliance class.
  * Dependencies: "ha_pch.h", "TV.h"
+ * 
+ * Last modified: 4/26/2024
+ * Added exception handling
  */
 
 #include "ha_pch.h"
@@ -21,7 +24,11 @@ namespace HomeAutomation {
 
 	void TV::SetChannel(int currentChannel)
 	{
-		// TODO: Handle exceptions for invalid currentChannel values
+		// Handle exceptions for invalid currentChannel values
+		if (currentChannel < 0 || currentChannel > 999)
+		{
+			throw std::invalid_argument("Invalid channel value. Channel must be between 0 and 999.");
+		}
 		m_CurrentChannel = currentChannel;
 	}
 
@@ -37,26 +44,46 @@ namespace HomeAutomation {
 
 	void TV::ChangeChannelUp()
 	{
-		// TODO: Handle exceptions for channel out of range
+		// Handle exceptions for channel out of range
+		if (m_CurrentChannel == 999)
+		{
+			m_CurrentChannel = 0;
+		}
 		m_CurrentChannel++;
 	}
 
 	void TV::ChangeChannelDown()
 	{
-		// TODO: Handle exceptions for channel out of range
+		// Handle exceptions for channel out of range
+		if (m_CurrentChannel == 0)
+		{
+			m_CurrentChannel = 999;
+		}
 		m_CurrentChannel--;
 	}
 
 	void TV::IncreaseVolume()
 	{
-		// TODO: Handle exceptions for volume out of range
-		m_Volume++;
+		// Handle exceptions for volume out of range
+		if (m_Volume == 100)
+		{
+			// do nothing
+		}
+		else {
+			m_Volume++;
+		}
 	}
 
 	void TV::DecreaseVolume()
 	{
-		// TODO: Handle exceptions for volume out of range
-		m_Volume--;
+		// Handle exceptions for volume out of range
+		if (m_Volume == 0)
+		{
+			// do nothing
+		}
+		else {
+			m_Volume--;
+		}
 	}
 
 	void TV::PrintStatus()

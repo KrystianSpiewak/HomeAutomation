@@ -38,7 +38,6 @@ namespace HomeAutomation {
 	{
 		// dispatch a message to the vacuum robot to return to the charging station
 		std::cout << "Vacuum Robot is returning to the charging station." << std::endl;
-		// TODO: Handle exceptions returned from device
 	}
 
 	void VacuumRobot::PrintStatus()
