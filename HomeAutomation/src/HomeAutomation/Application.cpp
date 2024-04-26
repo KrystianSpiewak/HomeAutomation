@@ -41,16 +41,16 @@ namespace HomeAutomation {
 			m_menuDisplay->DisplayMainMenu();
 			int choice = m_userIOHandler->GetUserInput(std::make_pair(1, 4));
 
-			//// Add test smart appliances to the m_smartAppliances vector
+			// Add test smart appliances to the m_smartAppliances vector
 			//std::shared_ptr<Thermostat> testThermostat = std::make_shared<Thermostat>();
-			//std::shared_ptr<Light> testLight = std::make_shared<Light>();
-			//std::shared_ptr<SecuritySystem> testSecuritySystem = std::make_shared<SecuritySystem>();
+			std::shared_ptr<Light> testLight = std::make_shared<Light>("NewLight", "NewBrand", "NewModel", "127.0.0.2");
+			std::shared_ptr<SecuritySystem> testSecuritySystem = std::make_shared<SecuritySystem>("NewSecuritySystem", "NewBrand", "NewModel", "127.0.0.3");
 			//std::shared_ptr<TV> testTV = std::make_shared<TV>();
 			//std::shared_ptr<VacuumRobot> testVacuumRobot = std::make_shared<VacuumRobot>();
 
 			//AddDevice(testThermostat);
-			//AddDevice(testLight);
-			//AddDevice(testSecuritySystem);
+			AddDevice(testLight);
+			AddDevice(testSecuritySystem);
 			//AddDevice(testTV);
 			//AddDevice(testVacuumRobot);
 

@@ -2,6 +2,9 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the SecuritySystem class that inherits from the SmartAppliance class.
  * Dependencies: SmartAppliance.h
+ * 
+ * Last modified: 04/26/2024
+ * Added constructor for the SecuritySystem class.
  */
 
 #pragma once
@@ -13,6 +16,15 @@ namespace HomeAutomation {
 	class SecuritySystem : public SmartAppliance
 	{
 	public:
+		/**
+		 Constructor for the SecuritySystem class.
+		@param name The name of the security system.
+		@param brand The brand of the security system.
+		@param model The model of the security system.
+		@param netAddr The network address of the security system.
+		*/
+		SecuritySystem(const std::string& name, const std::string& brand, const std::string& model, const std::string& netAddr);
+
 		/**
 		 Method to arm the security system.
 		 */

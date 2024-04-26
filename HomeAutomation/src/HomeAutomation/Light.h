@@ -15,6 +15,10 @@ namespace HomeAutomation {
 	public:
 		/**
 		Default constructor.
+		@param name The name of the light.
+		@param brand The brand of the light.
+		@param model The model of the light.
+		@param netAddr The network address of the light.
 		 */
 		Light(std::string name, std::string brand, std::string model, std::string netAddr);
 
