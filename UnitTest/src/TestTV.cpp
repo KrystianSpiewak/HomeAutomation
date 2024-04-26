@@ -2,6 +2,9 @@
  Student Name: Krystian Spiewak
  File description: This file is testing the TV class.
  Dependencies: pch.h, CppUnitTest.h, TV.h
+
+ Last modified: 04/26/2024
+ Update tests to avoid throwing exceptions.
  */
 
 #include "pch.h"
@@ -41,8 +44,9 @@ namespace HomeAutomation
 		TEST_METHOD(TVDecreaseVolume)
 		{
 			HomeAutomation::TV* testTV = new HomeAutomation::TV();
+			testTV->IncreaseVolume();
 			testTV->DecreaseVolume();
-			Assert::AreEqual(-1, testTV->GetVolume());
+			Assert::AreEqual(0, testTV->GetVolume());
 			delete testTV;
 		}
 		TEST_METHOD(TVSetChannel)

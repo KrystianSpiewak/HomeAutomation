@@ -12,6 +12,18 @@
 
 namespace HomeAutomation {
 
+	Thermostat::Thermostat(const std::string& name, const std::string& brand, const std::string& model, const std::string& netAddr)
+	{
+		SetName(name);
+		SetBrand(brand);
+		SetModel(model);
+		SetNetAddr(netAddr);
+
+		// Set the default temperature to 70 degrees Fahrenheit
+		SetTemperature(70);
+		SetCurrentTemp(70);
+	}
+
 	void Thermostat::SetTemperature(double temperature)
 	{
 		// Handle exceptions for invalid temperature values

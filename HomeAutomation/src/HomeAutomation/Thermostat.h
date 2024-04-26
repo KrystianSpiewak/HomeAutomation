@@ -10,11 +10,20 @@
 
 namespace HomeAutomation {
 	/**
-		 Thermostat class inherits from the SmartAppliance class and represents a thermostat smart appliance.
-		 	 */
+	 Thermostat class inherits from the SmartAppliance class and represents a thermostat smart appliance.
+	*/
 	class Thermostat : public SmartAppliance
 	{
 	public:
+		/**
+		 Constructor for the Thermostat class.
+		 @param name The name of the thermostat.
+		 @param brand The brand of the thermostat.
+		 @param model The model of the thermostat.
+		 @param netAddr The network address of the thermostat.
+		 */
+		Thermostat(const std::string& name, const std::string& brand, const std::string& model, const std::string& netAddr);
+
 		/**
 		Set the temperature that the thermostat should maintain.
 		@param temperature The temperature that the thermostat should maintain.
