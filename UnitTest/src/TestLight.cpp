@@ -18,13 +18,13 @@ namespace HomeAutomation
 	public:
 		TEST_METHOD(LightObjectCreated)
 		{
-			HomeAutomation::Light* testLight = new HomeAutomation::Light();
+			HomeAutomation::Light* testLight = new HomeAutomation::Light("Test Light", "Test Brand", "Test Model", "127.0.0.2");
 			Assert::IsNotNull(testLight);
 			delete testLight;
 		}
 		TEST_METHOD(LightTogglePower)
 		{
-			HomeAutomation::Light* testLight = new HomeAutomation::Light();
+			HomeAutomation::Light* testLight = new HomeAutomation::Light("Test Light", "Test Brand", "Test Model", "127.0.0.2");
 			testLight->ToggleOnOff();
 			Assert::IsTrue(testLight->IsOn());
 			testLight->ToggleOnOff();
@@ -33,20 +33,20 @@ namespace HomeAutomation
 		}
 		TEST_METHOD(LightSetBrightness)
 		{
-			HomeAutomation::Light* testLight = new HomeAutomation::Light();
+			HomeAutomation::Light* testLight = new HomeAutomation::Light("Test Light", "Test Brand", "Test Model", "127.0.0.2");
 			testLight->SetBrightness(50);
 			Assert::AreEqual(50, testLight->GetBrightness());
 			delete testLight;
 		}
 		TEST_METHOD(LightPrintStatus)
 		{
-			HomeAutomation::Light* testLight = new HomeAutomation::Light();
+			HomeAutomation::Light* testLight = new HomeAutomation::Light("Test Light", "Test Brand", "Test Model", "127.0.0.2");
 			testLight->PrintStatus();
 			delete testLight;
 		}
 		TEST_METHOD(LightSetBrightnessException)
 		{
-			HomeAutomation::Light* testLight = new HomeAutomation::Light();
+			HomeAutomation::Light* testLight = new HomeAutomation::Light("Test Light", "Test Brand", "Test Model", "127.0.0.2");
 			try
 			{
 				testLight->SetBrightness(101);
@@ -59,7 +59,7 @@ namespace HomeAutomation
 		}
 		TEST_METHOD(LightSetBrightnessException2)
 		{
-			HomeAutomation::Light* testLight = new HomeAutomation::Light();
+			HomeAutomation::Light* testLight = new HomeAutomation::Light("Test Light", "Test Brand", "Test Model", "127.0.0.2");
 			try
 			{
 				testLight->SetBrightness(9);

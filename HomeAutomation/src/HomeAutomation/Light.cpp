@@ -9,6 +9,14 @@
 
 namespace HomeAutomation {
 
+	Light::Light(std::string name, std::string brand, std::string model, std::string netAddr)
+	{
+		SetName(name);
+		SetBrand(brand);
+		SetModel(model);
+		SetNetAddr(netAddr);
+	}
+
 	void Light::ToggleOnOff()
 	{
 		m_isOn = !m_isOn;

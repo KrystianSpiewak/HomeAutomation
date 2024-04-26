@@ -14,6 +14,11 @@ namespace HomeAutomation {
 	{
 	public:
 		/**
+		Default constructor.
+		 */
+		Light(std::string name, std::string brand, std::string model, std::string netAddr);
+
+		/**
 		 Method to toggle the light on and off.
 		 */
 		void ToggleOnOff();
@@ -40,8 +45,8 @@ namespace HomeAutomation {
 		void PrintStatus();
 
 	private:
-		bool m_isOn;
-		int m_Brightness;
+		bool m_isOn{ false };
+		int m_Brightness{ 0 };
 	};
 
 } // namespace HomeAutomation

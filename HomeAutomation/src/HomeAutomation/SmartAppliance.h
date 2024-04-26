@@ -2,6 +2,9 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the SmartAppliance abstract class that individual smart appliances will inherit from.
  * Dependencies: <string>
+ * 
+ * Last modified: 04/26/2024
+ * Added default constructor and constructor with parameters.
  */
 
 #pragma once
@@ -18,6 +21,16 @@ namespace HomeAutomation {
 	class SmartAppliance
 	{
 	public:
+		/**
+		Default constructor.
+		*/
+		SmartAppliance() = default;
+
+		/**
+		Constructor with parameters.
+		*/
+		SmartAppliance(const std::string& m_Name, const std::string& m_Brand, const std::string& m_Model, const std::string& m_NetAddr);
+
 
 		/**
 		Method to set the name of the appliance.
@@ -131,5 +144,6 @@ namespace HomeAutomation {
 			return true;
 		}
 	};
+
 
 } // namespace HomeAutomation
