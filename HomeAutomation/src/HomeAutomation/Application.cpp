@@ -2,7 +2,8 @@
  Student name: Krystian Spiewak
  File description: This file contains the implementation of the Home Automation Application class.
  Dependencies: ha_pch.h, Application.h, Thermostat.h, Light.h, SecuritySystem.h, TV.h, VacuumRobot.h
- Last modified: 04/21/2024
+ Last modified: 04/26/2024
+ Added the cases 2 and 3 for saving and loading devices to and from a file.
  */
 
 #include "ha_pch.h"
@@ -60,9 +61,21 @@ namespace HomeAutomation {
 				break;
 			case 2:
 				// TODO: save devices to file
+
+				// Display a message to the user
+				m_userIOHandler->DisplayMessage("Devices have been saved to a file.");
+
+				// Wait for the user to press a key
+				m_userIOHandler->WaitForUserInput();
 				break;
 			case 3:
 				// TODO: load devices from file
+
+				// Display a message to the user
+				m_userIOHandler->DisplayMessage("Devices have been loaded from a file.");
+
+				// Wait for the user to press a key
+				m_userIOHandler->WaitForUserInput();
 				break;
 			case 4:
 				Close();

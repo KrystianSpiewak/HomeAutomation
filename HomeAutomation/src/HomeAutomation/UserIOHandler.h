@@ -2,6 +2,9 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the UserIOHandler class responsible for managing user input and output in the Home Automation application.
  * Dependencies: <string>
+ * 
+ * Last modified: 04/26/2024
+ * Added the declaration of the WaitForUserInput method.
  */
 #pragma once
 
@@ -26,6 +29,11 @@ namespace HomeAutomation {
 		 @param message The message to display.
          */
         void DisplayMessage(const std::string& message);
+
+        /**
+        Wait for the user to press a key before continuing.
+         */
+        void WaitForUserInput();
     };
 
 } // namespace HomeAutomation

@@ -2,6 +2,9 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the implementation of the UserIOHandler class responsible for managing user input and output in the Home Automation application.
  * Dependencies: "ha_pch.h", "UserIOHandler.h"
+ * 
+ * Last modified: 04/26/2024
+ * Added the implementation of the WaitForUserInput method.
  */
 
 #include "ha_pch.h"
@@ -48,5 +51,13 @@ namespace HomeAutomation {
     {
         std::cout << message << std::endl;
     }
+
+	void UserIOHandler::WaitForUserInput()
+	{
+		std::cout << "Press any key to continue...";
+
+		// Wait for the user to press a key
+		system("pause > nul"); // Windows only command to pause the console
+	}
 
 } // namespace HomeAutomation
