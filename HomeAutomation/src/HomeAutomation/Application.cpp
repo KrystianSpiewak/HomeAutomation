@@ -6,8 +6,8 @@
  Last modified: 04/26/2024
  Added the cases 2 and 3 for saving and loading devices to and from a file.
  Using parametrized constructor for the smart appliances.
- Added test smart devices fields
-
+ Added test smart devices fields.
+ Added Device menu options handling.
  */
 
 #include "ha_pch.h"
@@ -124,6 +124,7 @@ namespace HomeAutomation {
 			choice = m_userIOHandler->GetUserInput(deviceRange);
 			int requestedTemp = 0;
 			int requestedChannel = 0;
+			int requestedBrightness = 0;
 
 			switch (choice)
 			{
@@ -258,13 +259,21 @@ namespace HomeAutomation {
 				switch (choice)
 				{
 					case 1:
-						// TODO: Turn on/off
+						// Turn on/off
+						m_TestLight->ToggleOnOff();
+						std::cout << "Light is now " << (m_TestLight->IsOn() ? "on" : "off") << std::endl;
 						break;
 					case 2:
-						// TODO: Set brightness level
+						// Set brightness level
+						m_userIOHandler->DisplayMessage("Enter the brightness level (between 10 and 100): ");
+						requestedBrightness = m_userIOHandler->GetUserInput({ 10, 100 });
+						m_TestLight->SetBrightness(requestedBrightness);
+						std::cout << "Brightness set to: " << m_TestLight->GetBrightness() << std::endl;
 						break;
 					case 3:
-						// TODO: Display status
+						// Display status
+						m_TestLight->PrintStatus();
+						break;
 					case 4:
 						// Return to previous menu
 						break;
