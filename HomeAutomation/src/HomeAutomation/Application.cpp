@@ -6,16 +6,13 @@
  Last modified: 04/26/2024
  Added the cases 2 and 3 for saving and loading devices to and from a file.
  Using parametrized constructor for the smart appliances.
+ Added test smart devices fields
+
  */
 
 #include "ha_pch.h"
 #include "Application.h"
 
-#include "Thermostat.h"
-#include "Light.h"
-#include "SecuritySystem.h"
-#include "TV.h"
-#include "VacuumRobot.h"
 
 namespace HomeAutomation {
 
@@ -44,17 +41,17 @@ namespace HomeAutomation {
 			int choice = m_userIOHandler->GetUserInput(std::make_pair(1, 4));
 
 			// Add test smart appliances to the m_smartAppliances vector
-			std::shared_ptr<Thermostat> testThermostat = std::make_shared<Thermostat>("NewThermostat", "NewBrand", "NewModel", "127.0.0.4");
-			std::shared_ptr<Light> testLight = std::make_shared<Light>("NewLight", "NewBrand", "NewModel", "127.0.0.2");
-			std::shared_ptr<SecuritySystem> testSecuritySystem = std::make_shared<SecuritySystem>("NewSecuritySystem", "NewBrand", "NewModel", "127.0.0.3");
-			std::shared_ptr<TV> testTV = std::make_shared<TV>("NewTV", "NewBrand", "NewModel", "127.0.0.5");
-			std::shared_ptr<VacuumRobot> testVacuumRobot = std::make_shared<VacuumRobot>("NewVacuumRobot", "NewBrand", "NewModel", "127.0.0.6");
+			m_TestThermostat = std::make_shared<Thermostat>("NewThermostat", "NewBrand", "NewModel", "127.0.0.4");
+			m_TestLight = std::make_shared<Light>("NewLight", "NewBrand", "NewModel", "127.0.0.2");
+			m_TestSecuritySystem = std::make_shared<SecuritySystem>("NewSecuritySystem", "NewBrand", "NewModel", "127.0.0.3");
+			m_TestTV = std::make_shared<TV>("NewTV", "NewBrand", "NewModel", "127.0.0.5");
+			m_TestVacuumRobot = std::make_shared<VacuumRobot>("NewVacuumRobot", "NewBrand", "NewModel", "127.0.0.6");
 
-			AddDevice(testThermostat);
-			AddDevice(testLight);
-			AddDevice(testSecuritySystem);
-			AddDevice(testTV);
-			AddDevice(testVacuumRobot);
+			AddDevice(m_TestThermostat);
+			AddDevice(m_TestLight);
+			AddDevice(m_TestSecuritySystem);
+			AddDevice(m_TestTV);
+			AddDevice(m_TestVacuumRobot);
 
 			switch (choice)
 			{

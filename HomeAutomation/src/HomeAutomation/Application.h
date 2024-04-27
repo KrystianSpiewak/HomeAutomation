@@ -12,7 +12,11 @@
 #include <memory>
 #include <vector>
 
-#include "SmartAppliance.h"
+#include "Thermostat.h"
+#include "Light.h"
+#include "SecuritySystem.h"
+#include "TV.h"
+#include "VacuumRobot.h"
 
 /**
  Namespace for HomeAutomation identifiers
@@ -83,6 +87,13 @@ namespace HomeAutomation {
 		@param device: shared pointer to the device to be added.
 		*/
 		void AddDevice(std::shared_ptr<SmartAppliance> device);
+
+
+		std::shared_ptr<Thermostat> m_TestThermostat{ nullptr };
+		std::shared_ptr<Light> m_TestLight{ nullptr };
+		std::shared_ptr<SecuritySystem> m_TestSecuritySystem{ nullptr };
+		std::shared_ptr<TV> m_TestTV{ nullptr };
+		std::shared_ptr<VacuumRobot> m_TestVacuumRobot{ nullptr };
 	};
 
 	/**
