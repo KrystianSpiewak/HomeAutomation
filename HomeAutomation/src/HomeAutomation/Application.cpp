@@ -60,6 +60,9 @@ namespace HomeAutomation {
 				HandleDeviceManagement();
 				break;
 			case 2:
+				// clear contents of the file before saving
+				HA_Utilities::ClearFileContents();
+
 				// save devices to file
 				for (const auto& device : m_smartAppliances)
 				{
@@ -290,13 +293,18 @@ namespace HomeAutomation {
 				switch (choice)
 				{
 					case 1:
-						// TODO: Arm system
+						// Arm system
+						m_TestSecuritySystem->ArmSystem();
+						std::cout << "Security System is now armed." << std::endl;
 						break;
 					case 2:
-						// TODO: Disarm system
+						// Disarm system
+						m_TestSecuritySystem->DisarmSystem();
+						std::cout << "Security System is now disarmed." << std::endl;
 						break;
 					case 3:
-						// TODO: Display status
+						// Display status
+						m_TestSecuritySystem->PrintStatus();
 						break;
 					case 4:
 						// Return to previous menu

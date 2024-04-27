@@ -69,4 +69,30 @@ namespace HA_Utilities {
 
 		throw std::runtime_error("Device state not found in file");
 	}
+
+	/**
+	 Utility function to delete the save file.
+	 */
+	void DeleteSaveFile() {
+		if (std::remove("device_states.txt") != 0) {
+			throw std::runtime_error("Failed to delete the save file");
+		}
+		std::cout << "Save file deleted." << std::endl;
+	}
+
+	/**
+	Utility function to clear the contents of the file.
+	 */
+	void ClearFileContents() {
+		std::ofstream file;
+		file.open("device_states.txt", std::ios::trunc);
+
+		if (!file.is_open()) {
+			throw std::runtime_error("Failed to open the file for clearing contents");
+		}
+
+		file.close();
+
+		std::cout << "File contents cleared." << std::endl;
+	}
 } // namespace HA_Utilities
