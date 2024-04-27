@@ -74,7 +74,13 @@ namespace HomeAutomation {
 				m_userIOHandler->WaitForUserInput();
 				break;
 			case 3:
-				// TODO: load devices from file
+				// load devices from file
+				for (const auto& device : m_smartAppliances)
+				{
+					// Load the device state from a file
+					std::string state = HA_Utilities::LoadDeviceStateFromFile(device->GetName());
+					HA_Utilities::DisplayDeviceState(device->GetName(), state);
+				}
 
 				// Display a message to the user
 				m_userIOHandler->DisplayMessage("Devices have been loaded from a file.");

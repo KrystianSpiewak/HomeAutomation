@@ -30,12 +30,11 @@ namespace HA_Utilities {
 	 @param state The state of the device.
 	 */
 	void SaveDeviceStateToFile(const std::string& deviceName, const std::string state) {
-
 		std::ofstream file;
 		file.open("device_states.txt", std::ios::app);
 
 		if (file.is_open()) {
-			file << deviceName << " State: " << state << std::endl;
+			file << deviceName << ": " << state << std::endl;
 			file.close();
 		}
 		else {
