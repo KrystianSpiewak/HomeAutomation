@@ -60,8 +60,8 @@ namespace HomeAutomation {
 				HandleDeviceManagement();
 				break;
 			case 2:
-				// clear contents of the file before saving
-				HA_Utilities::ClearFileContents();
+				// delate save file before saving
+				HA_Utilities::DeleteSaveFile();
 
 				// save devices to file
 				for (const auto& device : m_smartAppliances)
@@ -145,8 +145,14 @@ namespace HomeAutomation {
 						//  prompt user for new temperature
 						m_userIOHandler->DisplayMessage("Enter the new temperature (between 60 and 90 degrees Fahrenheit): ");
 
-						requestedTemp = m_userIOHandler->GetUserInput({ 60, 90 });
-						// Set new temperature
+						try {
+							// Set new temperature
+							requestedTemp = m_userIOHandler->GetUserInput({ 60, 90 });
+						}
+						catch (const std::invalid_argument& e) {
+							m_userIOHandler->DisplayMessage(e.what());
+							break;
+						}
 						m_TestThermostat->SetTemperature(requestedTemp);
 
 						// Display the new temperature
