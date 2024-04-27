@@ -143,9 +143,9 @@ namespace HomeAutomation {
 						break;
 					case 2:
 						//  prompt user for new temperature
-						m_userIOHandler->DisplayMessage("Enter the new temperature (between 50 and 90 degrees Fahrenheit): ");
+						m_userIOHandler->DisplayMessage("Enter the new temperature (between 60 and 90 degrees Fahrenheit): ");
 
-						requestedTemp = m_userIOHandler->GetUserInput({ 50, 90 });
+						requestedTemp = m_userIOHandler->GetUserInput({ 60, 90 });
 						// Set new temperature
 						m_TestThermostat->SetTemperature(requestedTemp);
 
