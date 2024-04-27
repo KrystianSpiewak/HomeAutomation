@@ -61,7 +61,7 @@ namespace HomeAutomation {
 				break;
 			case 2:
 				// delete save file before saving
-				HA_Utilities::DeleteSaveFile();
+				HA_Utilities::ClearFileContents();
 
 				// save devices to file
 				for (const auto& device : m_smartAppliances)
