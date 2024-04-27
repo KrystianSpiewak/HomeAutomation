@@ -123,6 +123,7 @@ namespace HomeAutomation {
 			m_menuDisplay->DisplayDeviceManagementMenu();
 			choice = m_userIOHandler->GetUserInput(deviceRange);
 			int requestedTemp = 0;
+			int requestedChannel = 0;
 
 			switch (choice)
 			{
@@ -168,25 +169,42 @@ namespace HomeAutomation {
 				switch (choice)
 				{
 					case 1:
-						// TODO: Turn on/off
+						// Turn on/off
+						m_TestTV->ToggleOnOff();
+						std::cout << "TV is now " << (m_TestTV->IsOn() ? "on" : "off") << std::endl;
+
 						break;
 					case 2:
-						// TODO: Set channel
+						// Set channel
+						m_userIOHandler->DisplayMessage("Enter the channel number: ");
+						requestedChannel = m_userIOHandler->GetUserInput({ 1, 999 });
+						m_TestTV->SetChannel(requestedChannel);
+						std::cout << "Channel set to: " << m_TestTV->GetChannel() << std::endl;
+
 						break;
 					case 3:
-						// TODO: Change channel up
+						// Change channel up
+						m_TestTV->ChangeChannelUp();
+						std::cout << "Channel changed to: " << m_TestTV->GetChannel() << std::endl;
 						break;
 					case 4:
-						// TODO: Change channel down
+						// Change channel down
+						m_TestTV->ChangeChannelDown();
+						std::cout << "Channel changed to: " << m_TestTV->GetChannel() << std::endl;
 					break;
 					case 5:
-						// TODO: Increase volume
+						// Increase volume
+						m_TestTV->IncreaseVolume();
+						std::cout << "Volume increased to: " << m_TestTV->GetVolume() << std::endl;
 						break;
 					case 6:
-						// TODO: Decrease volume
+						// Decrease volume
+						m_TestTV->DecreaseVolume();
+						std::cout << "Volume decreased to: " << m_TestTV->GetVolume() << std::endl;
 						break;
 					case 7:
-						// TODO: Display status
+						// Display status
+						m_TestTV->PrintStatus();
 						break;
 					case 8:
 						// Return to previous menu
