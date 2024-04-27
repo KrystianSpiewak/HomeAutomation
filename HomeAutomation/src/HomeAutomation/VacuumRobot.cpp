@@ -32,6 +32,12 @@ namespace HomeAutomation {
 		return m_isOn;
 	}
 
+	void VacuumRobot::StartCleaning()
+	{
+		// dispatch a message to the vacuum robot to start cleaning
+		std::cout << "Vacuum Robot is starting to clean." << std::endl;
+	}
+
 	int VacuumRobot::GetBatteryLevel() const
 	{
 		return m_BatteryLevel;

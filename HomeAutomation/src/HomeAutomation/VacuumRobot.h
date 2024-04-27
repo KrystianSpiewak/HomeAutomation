@@ -40,6 +40,11 @@ namespace HomeAutomation {
 		bool IsOn() const;
 
 		/**
+		Method to start the vacuum robot cleaning.
+		 */
+		void StartCleaning();
+
+		/**
 		Method to get the battery level of the vacuum robot.
 		 */
 		int GetBatteryLevel() const;
@@ -71,6 +76,11 @@ namespace HomeAutomation {
 			Flag to indicate if the vacuum robot is on or off.
 			 */
 			bool m_isOn = false;
+
+			/**
+			Flag to indicate if the vacuum robot is cleaning.
+			 */
+			bool m_isCleaning = false;
 
 			/**
 			The battery level of the vacuum robot.

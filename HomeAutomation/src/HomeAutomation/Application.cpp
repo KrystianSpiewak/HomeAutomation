@@ -222,19 +222,25 @@ namespace HomeAutomation {
 				switch (choice)
 				{
 					case 1:
-						// TODO: Turn on/off
+						// Turn on/off
+						m_TestVacuumRobot->ToggleOnOff();
+						std::cout << "Vacuum Robot is now " << (m_TestVacuumRobot->IsOn() ? "on" : "off") << std::endl;
 						break;
 					case 2:
-						// TODO: Start cleaning
+						// Start cleaning
+						m_TestVacuumRobot->StartCleaning();
 						break;
 					case 3:
-						// TODO: Check battery level
+						// Check battery level
+						std::cout << "Battery level: " << m_TestVacuumRobot->GetBatteryLevel() << "%" << std::endl;
 						break;
 					case 4:
-						// TODO: Return to base
+						// Return to base
+						m_TestVacuumRobot->ReturnToBase();
 						break;
 					case 5:
-						// TODO: Display status
+						// Display status
+						m_TestVacuumRobot->PrintStatus();
 						break;
 					case 6:
 						// Return to previous menu
