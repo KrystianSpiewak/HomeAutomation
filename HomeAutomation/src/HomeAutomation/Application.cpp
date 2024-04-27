@@ -60,7 +60,7 @@ namespace HomeAutomation {
 				HandleDeviceManagement();
 				break;
 			case 2:
-				// delate save file before saving
+				// delete save file before saving
 				HA_Utilities::DeleteSaveFile();
 
 				// save devices to file
