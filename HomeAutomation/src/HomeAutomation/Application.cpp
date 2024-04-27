@@ -122,6 +122,7 @@ namespace HomeAutomation {
 		{
 			m_menuDisplay->DisplayDeviceManagementMenu();
 			choice = m_userIOHandler->GetUserInput(deviceRange);
+			int requestedTemp = 0;
 
 			switch (choice)
 			{
@@ -132,13 +133,23 @@ namespace HomeAutomation {
 				switch (choice)
 				{
 					case 1:
-						// TODO: Check current temperature
+						// Check current temperature
+						std::cout << "Current temperature: " << m_TestThermostat->GetTemperature() << " degrees Fahrenheit" << std::endl;
 						break;
 					case 2:
-						// TODO: Set new temperature
+						//  prompt user for new temperature
+						m_userIOHandler->DisplayMessage("Enter the new temperature (between 50 and 90 degrees Fahrenheit): ");
+
+						requestedTemp = m_userIOHandler->GetUserInput({ 50, 90 });
+						// Set new temperature
+						m_TestThermostat->SetTemperature(requestedTemp);
+
+						// Display the new temperature
+						std::cout << "New temperature set to: " << m_TestThermostat->GetTemperature() << " degrees Fahrenheit" << std::endl;
 						break;
 					case 3:
-						// TODO: Display status
+						// Display status
+						m_TestThermostat->PrintStatus();
 						break;
 					case 4:
 						// Return to previous menu
