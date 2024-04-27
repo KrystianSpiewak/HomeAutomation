@@ -9,12 +9,22 @@
 #include "SmartAppliance.h"
 
 namespace HomeAutomation {
+	
 	/**
 	TV class inherits from the SmartAppliance class and represents a TV smart appliance.
 	 */
 	class TV : public SmartAppliance
 	{
 		public:
+
+		/**
+		 Constructor for the TV class.
+		 @param name The name of the TV.
+		 @param brand The brand of the TV.
+		 @param model The model of the TV.
+		 @param netAddr The network address of the TV.
+		 */
+		TV(const std::string& name, const std::string& brand, const std::string& model, const std::string& netAddr);
 
 		/**
 		Toggles the TV on or off.

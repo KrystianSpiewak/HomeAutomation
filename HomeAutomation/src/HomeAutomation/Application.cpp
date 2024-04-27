@@ -2,8 +2,10 @@
  Student name: Krystian Spiewak
  File description: This file contains the implementation of the Home Automation Application class.
  Dependencies: ha_pch.h, Application.h, Thermostat.h, Light.h, SecuritySystem.h, TV.h, VacuumRobot.h
+
  Last modified: 04/26/2024
  Added the cases 2 and 3 for saving and loading devices to and from a file.
+ Using parametrized constructor for the smart appliances.
  */
 
 #include "ha_pch.h"
@@ -45,13 +47,13 @@ namespace HomeAutomation {
 			std::shared_ptr<Thermostat> testThermostat = std::make_shared<Thermostat>("NewThermostat", "NewBrand", "NewModel", "127.0.0.4");
 			std::shared_ptr<Light> testLight = std::make_shared<Light>("NewLight", "NewBrand", "NewModel", "127.0.0.2");
 			std::shared_ptr<SecuritySystem> testSecuritySystem = std::make_shared<SecuritySystem>("NewSecuritySystem", "NewBrand", "NewModel", "127.0.0.3");
-			//std::shared_ptr<TV> testTV = std::make_shared<TV>();
+			std::shared_ptr<TV> testTV = std::make_shared<TV>("NewTV", "NewBrand", "NewModel", "127.0.0.5");
 			//std::shared_ptr<VacuumRobot> testVacuumRobot = std::make_shared<VacuumRobot>();
 
 			AddDevice(testThermostat);
 			AddDevice(testLight);
 			AddDevice(testSecuritySystem);
-			//AddDevice(testTV);
+			AddDevice(testTV);
 			//AddDevice(testVacuumRobot);
 
 			switch (choice)

@@ -12,6 +12,17 @@
 
 namespace HomeAutomation {
 
+	TV::TV(const std::string& name, const std::string& brand, const std::string& model, const std::string& netAddr)
+	{
+		SetName(name);
+		SetBrand(brand);
+		SetModel(model);
+		SetNetAddr(netAddr);
+		m_isOn = false;
+		m_CurrentChannel = 0;
+		m_Volume = 50;
+	}
+
 	void TV::ToggleOnOff()
 	{
 		m_isOn = !m_isOn;

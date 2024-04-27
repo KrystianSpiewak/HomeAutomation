@@ -5,6 +5,7 @@
 
  Last modified: 04/26/2024
  Update tests to avoid throwing exceptions.
+ Update tests to use parameterized constructor.
  */
 
 #include "pch.h"
@@ -21,13 +22,13 @@ namespace HomeAutomation
 	public:
 		TEST_METHOD(TVObjectCreated)
 		{
-			HomeAutomation::TV* testTV = new HomeAutomation::TV();
+			HomeAutomation::TV* testTV = new HomeAutomation::TV("Test TV", "Test Brand", "Test Model", "127.0.0.5");
 			Assert::IsNotNull(testTV);
 			delete testTV;
 		}
 		TEST_METHOD(TVTogglePower)
 		{
-			HomeAutomation::TV* testTV = new HomeAutomation::TV();
+			HomeAutomation::TV* testTV = new HomeAutomation::TV("Test TV", "Test Brand", "Test Model", "127.0.0.5");
 			testTV->ToggleOnOff();
 			Assert::IsTrue(testTV->IsOn());
 			testTV->ToggleOnOff();
@@ -36,29 +37,28 @@ namespace HomeAutomation
 		}
 		TEST_METHOD(TVIncreaseVolume)
 		{
-			HomeAutomation::TV* testTV = new HomeAutomation::TV();
+			HomeAutomation::TV* testTV = new HomeAutomation::TV("Test TV", "Test Brand", "Test Model", "127.0.0.5");
 			testTV->IncreaseVolume();
-			Assert::AreEqual(1, testTV->GetVolume());
+			Assert::AreEqual(51, testTV->GetVolume());
 			delete testTV;
 		}
 		TEST_METHOD(TVDecreaseVolume)
 		{
-			HomeAutomation::TV* testTV = new HomeAutomation::TV();
-			testTV->IncreaseVolume();
+			HomeAutomation::TV* testTV = new HomeAutomation::TV("Test TV", "Test Brand", "Test Model", "127.0.0.5");
 			testTV->DecreaseVolume();
-			Assert::AreEqual(0, testTV->GetVolume());
+			Assert::AreEqual(49, testTV->GetVolume());
 			delete testTV;
 		}
 		TEST_METHOD(TVSetChannel)
 		{
-			HomeAutomation::TV* testTV = new HomeAutomation::TV();
+			HomeAutomation::TV* testTV = new HomeAutomation::TV("Test TV", "Test Brand", "Test Model", "127.0.0.5");
 			testTV->SetChannel(20);
 			Assert::AreEqual(20, testTV->GetChannel());
 			delete testTV;
 		}
 		TEST_METHOD(TVChangeChannelUp)
 		{
-			HomeAutomation::TV* testTV = new HomeAutomation::TV();
+			HomeAutomation::TV* testTV = new HomeAutomation::TV("Test TV", "Test Brand", "Test Model", "127.0.0.5");
 			testTV->SetChannel(20);
 			testTV->ChangeChannelUp();
 			Assert::AreEqual(21, testTV->GetChannel());
@@ -66,7 +66,7 @@ namespace HomeAutomation
 		}
 		TEST_METHOD(TVChangeChannelDown)
 		{
-			HomeAutomation::TV* testTV = new HomeAutomation::TV();
+			HomeAutomation::TV* testTV = new HomeAutomation::TV("Test TV", "Test Brand", "Test Model", "127.0.0.5");
 			testTV->SetChannel(20);
 			testTV->ChangeChannelDown();
 			Assert::AreEqual(19, testTV->GetChannel());
@@ -74,7 +74,7 @@ namespace HomeAutomation
 		}
 		TEST_METHOD(TVPrintStatus)
 		{
-			HomeAutomation::TV* testTV = new HomeAutomation::TV();
+			HomeAutomation::TV* testTV = new HomeAutomation::TV("Test TV", "Test Brand", "Test Model", "127.0.0.5");
 			testTV->SetChannel(20);
 			testTV->PrintStatus();
 			delete testTV;
