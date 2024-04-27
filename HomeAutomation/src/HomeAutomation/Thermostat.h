@@ -2,6 +2,10 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the Thermostat class that inherits from the SmartAppliance class.
  * Dependencies: SmartAppliance.h
+ * 
+ * Last modified: 04/26/2024
+ * Add parametrized constructor.
+ * Add GetState method.
  */
 
 #pragma once
@@ -53,6 +57,12 @@ namespace HomeAutomation {
 		Print the status of the thermostat.
 		 */
 		void PrintStatus() override;
+
+		/**
+		Get the state of the thermostat.
+		@return The state of the thermostat.
+		 */
+		std::string GetState() override;
 
 	private:
 		double m_Temperature;

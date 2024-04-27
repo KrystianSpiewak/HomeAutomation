@@ -5,6 +5,7 @@
  * 
  * Last modified: 04/26/2024
  * Added parametrized constructor for the VacuumRobot class.
+ * Added GetState method.
  */
 
 #pragma once
@@ -58,6 +59,12 @@ namespace HomeAutomation {
 		Method to print the status of the vacuum robot.
 		 */
 		void PrintStatus();
+
+		/**
+		Get the state of the vacuum robot.
+		@return The state of the vacuum robot.
+		 */
+		std::string GetState() override;
 
 		private:
 			/**

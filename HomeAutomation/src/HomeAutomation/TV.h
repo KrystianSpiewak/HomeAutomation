@@ -5,6 +5,7 @@
  * 
  * Last modified: 4/26/2024
  * Added parametrized constructor for the TV class.
+ * Added GetState method.
  */
 
 #pragma once
@@ -80,6 +81,12 @@ namespace HomeAutomation {
 		Print the status of the TV.
 		 */
 		void PrintStatus() override;
+
+		/**
+		Get the state of the TV.
+		@return The state of the TV.
+		 */
+		std::string GetState() override;
 
 	private:
 		/**

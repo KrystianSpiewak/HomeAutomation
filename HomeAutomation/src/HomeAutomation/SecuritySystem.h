@@ -5,6 +5,7 @@
  * 
  * Last modified: 04/26/2024
  * Added constructor for the SecuritySystem class.
+ * Added GetState method.
  */
 
 #pragma once
@@ -55,6 +56,11 @@ namespace HomeAutomation {
 		Method to print the status of the security system.
 		*/
 		void PrintStatus();
+
+		/**
+		Get the state of the security system.
+		*/
+		std::string GetState() override;
 
 	private:
 		/**

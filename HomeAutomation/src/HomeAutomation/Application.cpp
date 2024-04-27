@@ -12,6 +12,7 @@
 
 #include "ha_pch.h"
 #include "Application.h"
+#include "HomeAutomation/HA_Utilities.h"
 
 
 namespace HomeAutomation {
@@ -59,7 +60,12 @@ namespace HomeAutomation {
 				HandleDeviceManagement();
 				break;
 			case 2:
-				// TODO: save devices to file
+				// save devices to file
+				for (const auto& device : m_smartAppliances)
+				{
+					// Save the device state to a file
+					HA_Utilities::SaveDeviceStateToFile(device->GetName(), device->GetState());
+				}
 
 				// Display a message to the user
 				m_userIOHandler->DisplayMessage("Devices have been saved to a file.");

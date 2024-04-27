@@ -26,12 +26,10 @@ namespace HA_Utilities {
 
 	/**
 	 Utility function to save the state of a device to a file.
-	 @tparam T The type of the state to save.
 	 @param deviceName The name of the device.
 	 @param state The state of the device.
 	 */
-	template <typename T>
-	void SaveDeviceStateToFile(const std::string& deviceName, const T& state) {
+	void SaveDeviceStateToFile(const std::string& deviceName, const std::string state) {
 
 		std::ofstream file;
 		file.open("device_states.txt", std::ios::app);
@@ -47,12 +45,10 @@ namespace HA_Utilities {
 
 	/**
 	 Utility function to load the state of a device from a file.
-	 @tparam T The type of the state to load.
 	 @param deviceName The name of the device.
 	 @return The state of the device.
 	 */
-	template <typename T>
-	T LoadDeviceStateFromFile(const std::string& deviceName) {
+	std::string LoadDeviceStateFromFile(const std::string& deviceName) {
 
 		std::ifstream file;
 		file.open("device_states.txt");
@@ -63,7 +59,7 @@ namespace HA_Utilities {
 				if (line.find(deviceName) != std::string::npos) {	// Check if the device name is in the line
 					std::string stateStr = line.substr(line.find(":") + 2);	// Get the state value
 					file.close();
-					return static_cast<T>(stateStr); // Convert the state value to the correct type and return it
+					return stateStr; // Convert the state value to the correct type and return it
 				}
 			}
 			file.close();

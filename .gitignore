@@ -59,3 +59,4 @@ bin
 bin-int
 Miscellaneous
 !premake5.exe
+device_states.txt

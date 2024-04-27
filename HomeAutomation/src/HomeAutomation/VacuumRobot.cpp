@@ -59,4 +59,17 @@ namespace HomeAutomation {
 		std::cout << "Is On: " << m_isOn << std::endl;
 		std::cout << "Battery Level: " << m_BatteryLevel << std::endl;
 	}
+
+	std::string VacuumRobot::GetState()
+	{
+		std::string state = "Vacuum Robot State: ";
+		state += "Name: " + GetName() + ", ";
+		state += "Brand: " + GetBrand() + ", ";
+		state += "Model: " + GetModel() + ", ";
+		state += "Network Address: " + GetNetAddr() + ", ";
+		state += "Is On: " + std::to_string(m_isOn) + ", ";
+		state += "Battery Level: " + std::to_string(m_BatteryLevel) + "%";
+		return state;
+	}
+
 }

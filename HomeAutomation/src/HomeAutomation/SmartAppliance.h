@@ -5,6 +5,7 @@
  * 
  * Last modified: 04/26/2024
  * Added default constructor and constructor with parameters.
+ * Add GetState pure virtual method.
  */
 
 #pragma once
@@ -56,6 +57,12 @@ namespace HomeAutomation {
 		Virtual method to print the appliance status.
 		 */
 		virtual void PrintStatus() = 0;
+
+		/**
+		Get state of the device.
+		@return The string representing the device state.
+		 */
+		virtual std::string GetState() = 0;
 
 		/**
 		Method to get the name of the appliance.

@@ -5,6 +5,7 @@
  * 
  * Last modified: 04/26/2024
  * Added constructor for the SecuritySystem class.
+ * Add GetState method.
  */
 
 #include "ha_pch.h"
@@ -74,6 +75,18 @@ namespace HomeAutomation {
 		std::cout << "Security System Status: " << std::endl;
 		std::cout << "Is Armed: " << m_isArmed << std::endl;
 		std::cout << "Is Alarm Active: " << m_isAlarmActive << std::endl;
+	}
+
+	std::string SecuritySystem::GetState()
+	{
+		std::string state = "Security System State: ";
+		state += "Name: " + GetName() + ", ";
+		state += "Brand: " + GetBrand() + ", ";
+		state += "Model: " + GetModel() + ", ";
+		state += "Network Address: " + GetNetAddr() + ", ";
+		state += "Is Armed: " + std::to_string(m_isArmed) + ", ";
+		state += "Is Alarm Active: " + std::to_string(m_isAlarmActive);
+		return state;
 	}
 
 } // namespace HomeAutomation

@@ -67,4 +67,17 @@ namespace HomeAutomation {
 		std::cout << "Current Temperature: " << GetCurrentTemp() << std::endl;
 	}
 
+	std::string Thermostat::GetState()
+	{
+		std::string state = "Thermostat State: ";
+		state += "Name: " + GetName() + ", ";
+		state += "Brand: " + GetBrand() + ", ";
+		state += "Model: " + GetModel() + ", ";
+		state += "Network Address: " + GetNetAddr() + ", ";
+		state += "Temperature: " + std::to_string(GetTemperature()) + ", ";
+		state += "Current Temperature: " + std::to_string(GetCurrentTemp());
+
+		return state;
+	}
+
 } // namespace HomeAutomation

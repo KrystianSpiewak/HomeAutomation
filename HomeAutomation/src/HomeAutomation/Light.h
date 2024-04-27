@@ -2,6 +2,10 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the Light class that inherits from the SmartAppliance class.
  * Dependencies: SmartAppliance.h
+ * 
+ * Last modified: 04/26/2024
+ * Add parameterized constructor
+ * Add GetState method override
  */
 
 #pragma once
@@ -47,6 +51,11 @@ namespace HomeAutomation {
 		Method to print the status of the light.
 		*/
 		void PrintStatus();
+
+		/**
+		Get device state
+		*/
+		std::string GetState() override;
 
 	private:
 		bool m_isOn{ false };

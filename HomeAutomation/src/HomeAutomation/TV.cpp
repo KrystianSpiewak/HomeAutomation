@@ -6,6 +6,7 @@
  * Last modified: 4/26/2024
  * Added exception handling
  * Added parametrized constructor for the TV class.
+ * Added GetState method.
  */
 
 #include "ha_pch.h"
@@ -108,6 +109,20 @@ namespace HomeAutomation {
 		std::cout << "Current Channel: " << GetChannel() << std::endl;
 		std::cout << "Volume: " << GetVolume() << std::endl;
 		std::cout << "Is On: " << IsOn() << std::endl;
+	}
+
+	std::string TV::GetState()
+	{
+		std::string state = "TV State: ";
+		state += "Name: " + GetName() + ", ";
+		state += "Brand: " + GetBrand() + ", ";
+		state += "Model: " + GetModel() + ", ";
+		state += "Network Address: " + GetNetAddr() + ", ";
+		state += "Current Channel: " + std::to_string(GetChannel()) + ", ";
+		state += "Volume: " + std::to_string(GetVolume()) + ", ";
+		state += "Is On: " + std::to_string(IsOn());
+
+		return state;
 	}
 
 } // namespace HomeAutomation
