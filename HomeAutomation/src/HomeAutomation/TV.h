@@ -2,6 +2,9 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the TV class that inherits from the SmartAppliance class.
  * Dependencies: SmartAppliance.h
+ * 
+ * Last modified: 4/26/2024
+ * Added parametrized constructor for the TV class.
  */
 
 #pragma once

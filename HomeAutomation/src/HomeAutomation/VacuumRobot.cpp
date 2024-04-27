@@ -2,12 +2,25 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the implementation of the VacuumRobot class that inherits from the SmartAppliance class.
  * Dependencies: "ha_pch.h", "VacuumRobot.h"
+ *
+ * Last modified: 04/26/2024
+ * Added parametrized constructor for the VacuumRobot class.
  */
 
 #include "ha_pch.h"
 #include "VacuumRobot.h"
 
 namespace HomeAutomation {
+
+	VacuumRobot::VacuumRobot(const std::string& name, const std::string& brand, const std::string& model, const std::string& netAddr)
+	{
+		SetName(name);
+		SetBrand(brand);
+		SetModel(model);
+		SetNetAddr(netAddr);
+		m_isOn = false;
+		m_BatteryLevel = 100;
+	}
 
 	void VacuumRobot::ToggleOnOff()
 	{

@@ -48,13 +48,13 @@ namespace HomeAutomation {
 			std::shared_ptr<Light> testLight = std::make_shared<Light>("NewLight", "NewBrand", "NewModel", "127.0.0.2");
 			std::shared_ptr<SecuritySystem> testSecuritySystem = std::make_shared<SecuritySystem>("NewSecuritySystem", "NewBrand", "NewModel", "127.0.0.3");
 			std::shared_ptr<TV> testTV = std::make_shared<TV>("NewTV", "NewBrand", "NewModel", "127.0.0.5");
-			//std::shared_ptr<VacuumRobot> testVacuumRobot = std::make_shared<VacuumRobot>();
+			std::shared_ptr<VacuumRobot> testVacuumRobot = std::make_shared<VacuumRobot>("NewVacuumRobot", "NewBrand", "NewModel", "127.0.0.6");
 
 			AddDevice(testThermostat);
 			AddDevice(testLight);
 			AddDevice(testSecuritySystem);
 			AddDevice(testTV);
-			//AddDevice(testVacuumRobot);
+			AddDevice(testVacuumRobot);
 
 			switch (choice)
 			{

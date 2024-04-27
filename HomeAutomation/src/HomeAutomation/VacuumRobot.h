@@ -2,6 +2,9 @@
  * Student Name: Krystian Spiewak
  * File description: This file contains the declaration of the VacuumRobot class that inherits from the SmartAppliance class.
  * Dependencies:SmartAppliance.h
+ * 
+ * Last modified: 04/26/2024
+ * Added parametrized constructor for the VacuumRobot class.
  */
 
 #pragma once
@@ -15,6 +18,15 @@ namespace HomeAutomation {
 	class VacuumRobot : public SmartAppliance
 	{
 		public:
+
+		/**
+		Constructor for the VacuumRobot class.
+		@param name The name of the vacuum robot.
+		@param brand The brand of the vacuum robot.
+		@param model The model of the vacuum robot.
+		@param netAddr The network address of the vacuum robot.
+		*/
+		VacuumRobot(const std::string& name, const std::string& brand, const std::string& model, const std::string& netAddr);
 
 		/**
 		Toggles the vacuum robot on or off.
