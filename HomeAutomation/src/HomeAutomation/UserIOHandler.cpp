@@ -5,6 +5,7 @@
  * 
  * Last modified: 04/26/2024
  * Added the implementation of the WaitForUserInput method.
+ * Fixed multiple characters or string input validation.
  */
 
 #include "ha_pch.h"
@@ -27,6 +28,13 @@ namespace HomeAutomation {
 			std::cout << "Enter your choice (" << range.first << "-" << range.second << "): ";
 
 			if (!(std::cin >> choice) || choice < range.first || choice > range.second)
+			{
+				std::cout << "Invalid input. Please enter a valid number between " << range.first << " and " << range.second << "." << std::endl;
+				std::cin.clear(); // Clear the error flag
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard the input buffer
+			}
+			// if user inputs multiple characters or a string treat it as invalid input
+			else if (std::cin.peek() != '\n')
 			{
 				std::cout << "Invalid input. Please enter a valid number between " << range.first << " and " << range.second << "." << std::endl;
 				std::cin.clear(); // Clear the error flag
